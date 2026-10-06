@@ -25,6 +25,10 @@ spec:
     value: quay.io/redhat-user-workloads-stage/tmadore-tenant/trustyai-explainability-e5846:{{revision}}
   - name: dockerfile
     value: Dockerfile
+  - name: hermetic
+    value: 'true'
+  - name: prefetch-input
+    value: '[{"path": ".", "type": "x-maven"}, {"path": "explainability-arrow", "type": "x-maven"}, {"path": "explainability-connectors", "type": "x-maven"}, {"path": "explainability-core", "type": "x-maven"}, {"path": "explainability-service", "type": "x-maven"}]'
   pipelineSpec:
     description: |
       This pipeline is ideal for building container images from a Containerfile while maintaining trust after pipeline customization.
