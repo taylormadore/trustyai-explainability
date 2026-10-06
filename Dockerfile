@@ -27,6 +27,8 @@ USER root
 WORKDIR /build
 ENV MAVEN_OPTS="-Dfile.encoding=UTF8"
 
+COPY ${SOURCE_CODE}/.mvn/settings.xml /root/.m2/settings.xml
+
 RUN sed -i 's:security.provider.12=SunPKCS11:#security.provider.12=SunPKCS11:g' /usr/lib/jvm/java-17-openjdk-*/conf/security/java.security \
     && sed -i 's:#security.provider.1=SunPKCS11 ${java.home}/lib/security/nss.cfg:security.provider.12=SunPKCS11 ${java.home}/lib/security/nss.cfg:g' /usr/lib/jvm/java-17-openjdk-*/conf/security/java.security
 
