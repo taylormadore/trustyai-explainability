@@ -38,7 +38,7 @@ COPY ${SOURCE_CODE}/explainability-integrationtests ./explainability-integration
 COPY ${SOURCE_CODE}/pom.xml ./pom.xml
 
 # build and clean up everything we don't need
-RUN mvn -B clean package --file pom.xml -P service-minimal -DskipTests -Dquarkus.profile=odh && rm -Rf explainability-core explainability-connectors explainability-arrow explainability-integrationtests
+RUN mvn -s /cachi2/output/settings.xml -B clean package --file pom.xml -P service-minimal -Dmaven.test.skip=false -DskipTests -Dquarkus.profile=rhoai && rm -Rf explainability-core explainability-connectors explainability-arrow explainability-integrationtests
 
 ## Livebuilder CODE END ##
 
