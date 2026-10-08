@@ -29,6 +29,17 @@ spec:
     value: 'true'
   - name: prefetch-input
     value: '[{"path": ".", "type": "x-maven"}, {"path": "explainability-arrow", "type": "x-maven"}, {"path": "explainability-connectors", "type": "x-maven"}, {"path": "explainability-core", "type": "x-maven"}, {"path": "explainability-service", "type": "x-maven"}]'
+  taskRunSpecs:
+    - pipelineTaskName: build-container
+      stepSpecs:
+        - name: build
+          computeResources:
+            requests:
+              cpu: 2
+              memory: 8Gi
+            limits:
+              cpu: 2
+              memory: 8Gi
   pipelineSpec:
     description: |
       This pipeline is ideal for building container images from a Containerfile while maintaining trust after pipeline customization.
