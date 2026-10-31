@@ -1,6 +1,6 @@
 grpcio
 grpcio-tools
-pandas==1.5.2
+pandas==1.5.3
 numpy
 requests==2.32.4
 setuptools==78.1.1
