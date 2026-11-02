@@ -48,7 +48,7 @@ jobs:
         run: git config --system core.longpaths true
       - name: Set up JDK + Maven version
         # include actions/checkout, actions/setup-java, actions/cache, see https://github.com/s4u/setup-maven-action/blob/main/action.yml
-        uses: s4u/setup-maven-action@v1.11.0
+        uses: s4u/setup-maven-action@v1.22.0
         with:
           java-version: ${{ matrix.java-version }}
           maven-version: ${{ matrix.maven-version }}
