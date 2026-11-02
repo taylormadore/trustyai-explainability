@@ -141,7 +141,7 @@
             <dependency>
                 <groupId>io.vertx</groupId>
                 <artifactId>vertx-bridge-common</artifactId>
-                <version>4.5.32</version>
+                <version>5.2.2</version>
             </dependency>
             <dependency>
                 <groupId>io.vertx</groupId>
